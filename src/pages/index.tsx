@@ -1,12 +1,12 @@
 import { useAtom } from "jotai";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import NavBar from "./components/NavBar";
 import TodoList from "./components/TodoList";
 import { currentUserId, isLoggedIn } from "./jotaiStore/loggedInInfo";
-import { Todo } from "./typings";
-
+import type { Todo } from "./typings";
+import React from "react";
 
 const Home: NextPage = () => {
   const [loggedIn] = useAtom(isLoggedIn)
